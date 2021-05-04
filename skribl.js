@@ -4,7 +4,7 @@ var name = 0;
 var saved = false;
 
 while (true) {
-  await new Promise(r => setTimeout(r, 500));
+  await new Promise(r => setTimeout(r, 250));
   var messages = document.getElementById("boxMessages")
   if (messages) {
   	if (messages.hasChildNodes()) {
@@ -13,7 +13,7 @@ while (true) {
   		var last_message = children[messages_len - 1].innerText;
   		var words = [];
   		if (last_message.startsWith("The word was")) {
-  			words = last_message.split(" ");
+  			words = last_message.split("The word was ");
   			var words_len = words.length;
   			word = words[words_len - 1]
   			console.log("word is " + word)
